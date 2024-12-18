@@ -54,7 +54,8 @@ export async function POST(req: Request) {
   const eventType = evt?.type;
 
   if (eventType === "user.created" || eventType === "user.updated") {
-    const { first_name, last_name, image_url, email_addresses } = evt?.data;
+    const { first_name, last_name, image_url, username, email_addresses } =
+      evt?.data;
 
     try {
       if (id !== undefined) {
@@ -63,18 +64,19 @@ export async function POST(req: Request) {
           first_name!,
           last_name!,
           image_url!,
+          username!,
           email_addresses
         );
 
         if (user && eventType === "user.created") {
           try {
-            // ! STILL ERROR YA T_T
             const client = await clerkClient();
             await client.users.updateUserMetadata(id, {
               publicMetadata: {
                 userMongoId: user._id,
               },
             });
+            return new Response("User created", { status: 200 });
           } catch (error) {
             console.log("Error updating user metadata", error);
           }
