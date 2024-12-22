@@ -49,19 +49,6 @@ const Listing = async ({ params }: ListingParams) => {
       <div>
         {/* membuat LISTING IMAGE URLS SWIPER SLIDER */}
         {/* NANTI IMPORT LISTING FROM HERE */}
-        {/* {listing.imageUrls.length > 0 ? (
-          <Image
-            src={listing?.imageUrls[0]}
-            alt={listing.name}
-            width={400}
-            height={400}
-            className="h-[400px] object-contain mx-auto w-full py-2"
-          />
-        ) : (
-          <div className="h-[400px] text-2xl font-bold flex justify-center items-center">
-            No Image Available
-          </div>
-        )} */}
         <ImageListingSection listing={listing} />
 
         <div className="flex flex-col max-w-4xl mx-auto p-3 my-7 gap-4">
