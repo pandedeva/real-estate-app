@@ -1,18 +1,18 @@
-import CreateListingSection from "@/components/CreateListingSection";
+import UpdateListingSection from "@/components/UpdateListingSection";
 import React from "react";
 
-const CreateListing = () => {
+const UpdateListing = () => {
   return (
     <section>
       <div className="p-3 container max-w-4xl mx-auto">
         <h1 className="text-3xl font-bold text-center my-7">
-          Create a Listing
+          Update a Listing
         </h1>
 
-        <CreateListingSection />
+        <UpdateListingSection />
       </div>
     </section>
   );
 };
 
-export default CreateListing;
+export default UpdateListing;
