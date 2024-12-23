@@ -10,6 +10,12 @@ const nextConfig: NextConfig = {
         port: "",
         pathname: "**",
       },
+      {
+        protocol: "https",
+        hostname: "53.fs1.hubspotusercontent-na1.net",
+        port: "",
+        pathname: "**",
+      },
     ],
   },
 };
