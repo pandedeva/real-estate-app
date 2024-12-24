@@ -20,9 +20,7 @@ const Header = () => {
     urlParams.set("searchTerm", searchTerm);
 
     const searchQuery = urlParams.toString();
-    router.push(
-      `/search?${searchQuery}&type=all&parking=true&furnished=true&offer=false&sort=regularPrice&order=desc`
-    );
+    router.push(`/search?${searchQuery}`);
     setSearchTerm("");
   };
 
