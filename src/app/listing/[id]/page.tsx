@@ -10,20 +10,14 @@ import {
   FaParking,
 } from "react-icons/fa";
 
-interface ListingParams {
-  params: {
-    id: string;
-  };
-}
-
-const Listing = async ({ params }: ListingParams) => {
-  const { id } = params;
+/* eslint-disable */
+const Listing = async ({ params }: any) => {
   let listing = null;
 
   try {
     const result = await fetch(process.env.URL + "/api/listing/get", {
       method: "POST",
-      body: JSON.stringify({ listingId: id }),
+      body: JSON.stringify({ listingId: params.id }),
       cache: "no-store",
     });
 
