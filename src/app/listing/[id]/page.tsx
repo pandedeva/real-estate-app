@@ -17,8 +17,7 @@ interface ListingParams {
 }
 
 const Listing = async ({ params }: ListingParams) => {
-  // agar tidak error tamabhakn saja await lol
-  const { id } = await params;
+  const { id } = params;
   let listing = null;
 
   try {
